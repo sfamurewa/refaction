@@ -10,10 +10,12 @@ namespace refactor_me.Models
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductOption> Options { get; set; }
-        public ProductContext(): base(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=
-                                        |DataDirectory|Database.mdf;Integrated Security=True")
+        public ProductContext(): base("name=ProductConnectionString")
         {
          
         }
     }
 }
+
+    //(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=
+    //                                    |DataDirectory|Database.mdf;Integrated Security=True")

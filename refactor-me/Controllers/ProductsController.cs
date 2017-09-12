@@ -35,9 +35,10 @@ namespace refactor_me.Controllers
                     Items = ProductRepo.GetAllProducts().ToList().Select(s => Factory.Create(s))
                 });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return InternalServerError(new Exception("Server Error"));
+                //return InternalServerError(new Exception("Server Error"));
+                return InternalServerError(ex);
             }
 
         }
@@ -173,9 +174,10 @@ namespace refactor_me.Controllers
                 else
                     return BadRequest();
             }
-            catch (Exception)
+            catch (Exception )
             {
                 return InternalServerError(new Exception("Server Error"));
+
             }
 
         }
